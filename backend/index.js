@@ -7,11 +7,19 @@ async function connectDB(){
     console.log("Mongo DB conncted");
 }
 
+app.use(express.json());
+app.use(cors());
+
 connectDB();
 
 
 app.get("/",(req,res)=>{
     res.send("Hello World");
+})
+
+
+app.post("/addItem",async(req,res)=>{
+    console.log(req.body);
 })
 
 
